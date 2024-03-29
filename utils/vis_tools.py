@@ -25,8 +25,8 @@ def plot_bbox_labels(img, bbox, label=None, cls_color=None, text_scale=0.4):
 def visualize(image, bboxes, scores, labels, class_colors, class_names, class_indexs):
     ts = 0.4
     for i, bbox in enumerate(bboxes):
-        # if scores[i] <= 0.7: #如果置信度小于0.8，则不予显示
-        #     continue
+        if scores[i] <= 0.5: #如果置信度小于0.8，则不予显示
+            continue
         cls_id = int(labels[i])
         cls_color = class_colors[cls_id]
         cls_id = class_indexs[cls_id]

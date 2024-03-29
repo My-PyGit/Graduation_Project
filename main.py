@@ -280,9 +280,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             print(repr(e))
 
     def closeEvent(self, event):
-        self.det_thread.jump_out = True
         reply = QMessageBox.question(self, 'Warning', 'Do you really want to quit?', QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
         if reply == QMessageBox.Yes:
+            self.det_thread.jump_out = True
             event.accept()
             MessageBox(
                 title='   Prompt   ', text='        Closing.......             ', time=1000, auto=True).exec_()

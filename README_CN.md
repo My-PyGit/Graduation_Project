@@ -269,3 +269,7 @@ python track.py --mode video \
 结果如下：
 
 ![image](./img_files/video_tracking_demo.gif)
+
+
+主程序为main.py ，调用的是YOLOv5模型， 直接运行即可（运行之前需要先训练模型）。
+注意本代码绝缘子数据集使用的是VOC格式。
